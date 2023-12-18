@@ -1,0 +1,27 @@
+.btn {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background: linear-gradient(90deg, #14bf8a 0%, #0abc54 100%);
+  border: 0px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  margin-right: 16px;
+}
+.btn-disabled {
+  cursor: no-drop;
+  background: linear-gradient(90deg, #14bf8a 0%, #0abc54 100%);
+  border-radius: 4px;
+  opacity: 0.4;
+}
+.btn-small {
+  font-size: 14px;
+  line-height: 40px;
+}
+.btn-large {
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  width: 120px;
+}
