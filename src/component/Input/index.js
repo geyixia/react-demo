@@ -1,20 +1,29 @@
 import "./index.scss";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const InputDiv = () => {
   const [value, setValue] = useState("");
   const [checked, setChecked] = useState(false);
+  // 创建ref对象并与jsx绑定 通过InputRef.current拿到dom对象
+  // InputRef.current.value 拿到值
+  // InputRef.current.focus() 获取焦点
+  const InputRef = useRef(null);
   return (
     <div>
       {/* value和onChange必须同时出现 */}
-      <input value={value} onChange={(e) => setValue(e.target.value)} />
+      <input
+        ref={InputRef}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
       <br />
       <button
         onClick={() => {
-          console.log(value);
+          console.log(InputRef.current.value);
+          InputRef.current.focus();
         }}
       >
-        获取
+        获取值与焦点
       </button>
       <button
         onClick={() => {
