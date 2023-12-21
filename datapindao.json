@@ -45,7 +45,7 @@
     {
       "id": 8,
       "name": "健康",
-      "selected": true,
+      "selected": false,
       "canEdit": true
     },
     {
@@ -63,7 +63,7 @@
     {
       "id": 11,
       "name": "职场",
-      "selected": false,
+      "selected": true,
       "canEdit": true
     },
     {
@@ -75,7 +75,7 @@
     {
       "id": 13,
       "name": "知识",
-      "selected": false,
+      "selected": true,
       "canEdit": true
     },
     {
@@ -93,7 +93,7 @@
     {
       "id": 16,
       "name": "汽车",
-      "selected": true,
+      "selected": false,
       "canEdit": true
     }
   ]
