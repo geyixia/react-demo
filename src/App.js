@@ -6,9 +6,12 @@ import Header from "./component/Header";
 import Add from "./component/Add";
 import InputDiv from "./component/Input/index";
 import Content from "./component/Content/index";
+
 import Home from "./views/Home/index";
+
 import { createContext } from "react";
 import axios from "axios";
+import ReduxDemo from "./views/reduxDemo/index";
 
 const dataContext = createContext();
 
@@ -36,6 +39,7 @@ const App = () => {
       <dataContext.Provider value={{ channels, addSelect }}>
         <Home />
       </dataContext.Provider>
+      <ReduxDemo></ReduxDemo>
     </div>
   );
 };
