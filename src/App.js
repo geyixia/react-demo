@@ -1,5 +1,6 @@
 import "./index.scss";
 import { useEffect, useState } from "react";
+import { Link, Outlet, useSearchParams } from "react-router-dom";
 
 import Header from "./component/Header";
 
@@ -16,16 +17,18 @@ import ReduxDemo from "./views/reduxDemo/index";
 const dataContext = createContext();
 
 const App = () => {
+  const [params] = useSearchParams()
+  console.log(params.get('id'))
   const [channels, setChannels] = useState([]);
   const loadDate = async () => {
-    const res = await axios.get("http://localhost:8080/channels");
+    const res = await axios.get("http://localhost:3000/channels");
     setChannels(res.data);
   };
   useEffect(() => {
     loadDate();
   }, []);
   const addSelect = async (item) => {
-    await axios.patch(`http://localhost:8080/channels/${item.id}`, {
+    await axios.patch(`http://localhost:3000/channels/${item.id}`, {
       selected: !item.selected,
     });
     loadDate();
@@ -40,6 +43,9 @@ const App = () => {
         <Home />
       </dataContext.Provider>
       <ReduxDemo></ReduxDemo>
+      <Link to="/article/1001/122">文章页</Link>
+      <Link to="/login">登录页</Link>
+      <Outlet></Outlet>
     </div>
   );
 };

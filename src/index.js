@@ -4,14 +4,17 @@ import React from "react";
 import App from "./App";
 import store from "./store";
 
+import router from "./router";
+import { RouterProvider } from "react-router-dom";
+
 // 创建react根对象
 const root = createRoot(document.querySelector("#root"));
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
   </React.StrictMode>
 );
 

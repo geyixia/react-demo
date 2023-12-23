@@ -22,7 +22,7 @@ const Content = () => {
   const [childList, setChildList] = useState(list);
   const [item, setItem] = useState("学习");
   const loadDate = async () => {
-    const res = await axios.get("http://localhost:8080/todo");
+    const res = await axios.get("http://localhost:3000/todo");
     const list = res.data.map((item) => {
       return {
         id: item.id,
@@ -45,7 +45,7 @@ const Content = () => {
 
   const changeList = async (item) => {
     setItem(item.name);
-    await axios.patch(`http://localhost:8080/todo/${item.id}`, {
+    await axios.patch(`http://localhost:3000/todo/${item.id}`, {
       done: !item.class,
     });
     loadDate();
